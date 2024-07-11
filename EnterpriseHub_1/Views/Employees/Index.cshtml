@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewData["Title"] = "Employee Index";
+}
+
+
+<style>
+    .gray-column {
+        background-color: #F16C9D;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #e9ecef; 
+    }
+</style>
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <!-- Create New Employee Button -->
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-primary">Create New Employee</a>
+    </div>
+
+    <!-- Employee Table -->
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark gray-column">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().EmpNo)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Name)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Email)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Basic)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DeptNoNavigation.DeptName)</th>
+                <th>@Html.DisplayNameFor(model => model.First().PosNoNavigation.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.First().ProjNoNavigation.ProjName)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.EmpNo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Basic)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DeptNoNavigation.DeptName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PosNoNavigation.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProjNoNavigation.ProjName)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.EmpNo" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.EmpNo" class="btn btn-sm btn-info">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.EmpNo" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

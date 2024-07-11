@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<style>
+    .gray-column {
+        background-color: #F16C9D;
+        color: black;
+    }
+    .table-hover tbody tr:hover {
+        background-color: #e9ecef;
+    }
+
+    .btn-custom {
+        margin-right: 5px;
+    }
+</style>
+
+<div class="container mt-5 table-background">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <div class="text-right mb-3">
+        <a asp-action="Create" class="btn btn-primary">Create New Project</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark gray-column">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().ProjNo)</th>
+                <th>@Html.DisplayNameFor(model => model.First().ProjName)</th>
+                <th>@Html.DisplayNameFor(model => model.First().StartDate)</th>
+                <th>@Html.DisplayNameFor(model => model.First().EndDate)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ProjNo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProjName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProjNo" class="btn btn-sm btn-warning btn-custom">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ProjNo" class="btn btn-sm btn-info btn-custom">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ProjNo" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

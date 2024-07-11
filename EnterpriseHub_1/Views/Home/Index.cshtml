@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        background: #D8BFD8;
+        color: #000;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+        height: 200px;
+    }
+
+    .card-body {
+        background-color: #fff;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        color: #000;
+    }
+
+    .card-title {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        margin-bottom: 0.5rem;
+    }
+
+    .lead {
+        font-weight: 300;
+    }
+</style>
+
+<div class="container mt-5 bg-custom">
+    <div class="text-center">
+        <h1 class="display-4">Welcome to ERP System</h1>
+        <p class="lead">Manage your business processes efficiently with our comprehensive ERP solution.</p>
+    </div>
+
+    <hr />
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <a href="/Employee/Index">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGVtcGxveWVlc3xlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Employees" style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Employees</h5>
+                    <p class="card-text">Manage employee details, payroll, and more.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <a href="/Department/Index">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Departments" style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Departments</h5>
+                    <p class="card-text">Organize departments and their respective heads.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <a href="/Project/Index">
+                    <img src="https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Projects" style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Projects</h5>
+                    <p class="card-text">Track project details, timelines, and teams.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <a href="/Position/Index">
+                    <img src="https://plus.unsplash.com/premium_photo-1682093297369-9ed9fe352b6a?dpr=1&w=306&auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTJ8fFBvc2l0aW9ucyUyMGluJTIwY29tcGFueXxlbnwwfDB8fHwxNzIwNDU4MjU3fDE&ixlib=rb-4.0.3" class="card-img-top" alt="Positions" style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Positions</h5>
+                    <p class="card-text">Manage job positions and salary ranges.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <a href="/Reports/Index">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Reports" style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Reports</h5>
+                    <p class="card-text">Generate various reports for analysis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <a href="/Settings/Index">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Settings" style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Settings</h5>
+                    <p class="card-text">Configure system settings and preferences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p><a href="https://learn.microsoft.com/aspnet/core"></a>.</p>
+    </div>
+</div>

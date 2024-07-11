@@ -1,0 +1,115 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    .form-background {
+        background: #B0C4DE;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-title {
+        color: #333;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        background-color: #007BFF;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+</style>
+
+<div class="container mt-5">
+    <h1 class="text-center form-title">@ViewData["Title"] Employee</h1>
+
+    <h4 class="mt-4">Employee</h4>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6 form-background">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <div class="form-group mb-3">
+                    <label asp-for="EmpNo" class="control-label"></label>
+                    <input asp-for="EmpNo" class="form-control" />
+                    <span asp-validation-for="EmpNo" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Basic" class="control-label"></label>
+                    <input asp-for="Basic" class="form-control" />
+                    <span asp-validation-for="Basic" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="DeptNo" class="control-label">Department Name</label>
+                    <select asp-for="DeptNo" class="form-control">
+                        <option value="">---select---</option>
+                        @foreach (var item in ViewBag.DeptNo)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                    <span asp-validation-for="DeptNo" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="PosNo" class="control-label">Position Name</label>
+                    <select asp-for="PosNo" class="form-control">
+                        <option value="">---select---</option>
+                        @foreach (var item in ViewBag.PosNo)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                    <span asp-validation-for="PosNo" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProjNo" class="control-label">Project Name</label>
+                    <select asp-for="ProjNo" class="form-control">
+                        <option value="">---select---</option>
+                        @foreach (var item in ViewBag.ProjNo)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ProjNo" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-4">
+                    <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+            <div class="mt-3">
+                <a asp-action="Index" class="btn btn-secondary btn-block">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

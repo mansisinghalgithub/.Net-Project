@@ -1,0 +1,107 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    .container-background {
+        background-color: #e9f5ff;
+        padding: 30px;
+        border-radius: 15px;
+        max-width: 600px; 
+        margin: 0 auto; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+        color: #1a3e72;
+    }
+
+    .card-header {
+        background-color: #1a3e72;
+        color: white;
+    }
+
+    .card-footer {
+        background-color: #e9f5ff;
+    }
+
+    .btn-primary {
+        background-color: #1a3e72;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #4d79a7;
+        border: none;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .text-muted {
+        color: #4d79a7 !important;
+    }
+</style>
+
+<div class="container mt-5 container-background">
+    <h1 class="text-center form-title">@ViewData["Title"] Employee</h1>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>Employee Details</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.Basic)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Basic)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.DeptNoNavigation.DeptName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.DeptNoNavigation.DeptHead)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.PosNoNavigation.Name)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.PosNoNavigation.Name)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.ProjNoNavigation.ProjName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ProjNoNavigation.ProjName)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-right">
+            <a asp-action="Edit" asp-route-id="@Model?.EmpNo" class="btn btn-primary">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

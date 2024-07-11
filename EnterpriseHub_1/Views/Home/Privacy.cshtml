@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+<style>
+    body {
+        background: #D8BFD8;
+        color: #000;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+        height: 200px;
+    }
+
+    .card-body {
+        background-color: #fff;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        color: #000;
+    }
+
+    .card-title {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        margin-bottom: 0.5rem;
+    }
+
+    .lead {
+        font-weight: 300;
+    }
+</style>
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+        <p class="lead">Learn more about our company, mission, and team.</p>
+    </div>
+
+    <hr />
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2>Our Team</h2>
+            <p>We have a diverse team of skilled professionals dedicated to achieving excellence in every project. Meet our team and learn about their expertise and contributions.</p>
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center">
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="~/images/Mansi%20A.jpg" class="card-img-top" alt="Mansi Aggarwal" style="height: 200px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mansi Aggarwal</h5>
+                    <p class="card-text">mansisinghal63@gmail.com<br>+91 7015545877</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="~/images/Kajal.jpg" class="card-img-top" alt="Kajal Rajput" style="height: 200px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Kajal Rajput</h5>
+                    <p class="card-text">krajput0511@gmail.com<br>+91 7057709092</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="~/images/Sakshi.jpeg" class="card-img-top" alt="Sakshi Thele" style="height: 200px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sakshi Thele</h5>
+                    <p class="card-text">sakshithele@gmail.com<br>+91 7559376334</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="~/images/Srikant.jpg" class="card-img-top" alt="Shrikant Mane" style="height: 200px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Shrikant Mane</h5>
+                    <p class="card-text">shrikantgmane08@gmail.com<br>+91 7875371607</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="~/images/Onkar.jpg" class="card-img-top" alt="Onkar Jadhav" style="height: 200px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Onkar Jadhav</h5>
+                    <p class="card-text">onkarjadhav2462000@gmail.com<br>+91 9527750339</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

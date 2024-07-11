@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Position>
+
+@{
+    ViewData["Title"] = "Positions";
+}
+
+<style>
+    .gray-column {
+        background-color: #F16C9D;
+        color: black;
+    }
+    .table-hover tbody tr:hover {
+        background-color: #e9ecef;
+    }
+
+    .btn-custom {
+        margin-right: 5px;
+    }
+</style>
+
+<div class="container mt-5 table-background">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <div class="text-right mb-3">
+        <a asp-action="Create" class="btn btn-primary">Create New Position</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark gray-column">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().PosNo)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Name)</th>
+                <th>@Html.DisplayNameFor(model => model.First().MinSalary)</th>
+                <th>@Html.DisplayNameFor(model => model.First().MaxSalary)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.PosNo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MinSalary)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MaxSalary)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PosNo" class="btn btn-sm btn-warning btn-custom">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.PosNo" class="btn btn-sm btn-info btn-custom">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.PosNo" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
